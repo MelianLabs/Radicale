@@ -29,9 +29,11 @@ in them for XML requests (all but PUT).
 
 try:
     from collections import OrderedDict
+    from urllib.parse import quote_plus
 except ImportError:
     # Python 2.6 has no OrderedDict, use a dict instead
     OrderedDict = dict  # pylint: disable=C0103
+    from urllib import quote_plus
 import re
 import xml.etree.ElementTree as ET
 
@@ -260,7 +262,7 @@ def _propfind_response(path, item, props, user):
             # pylint: enable=W0511
         elif tag == _tag("D", "current-user-principal") and user:
             tag = ET.Element(_tag("D", "href"))
-            tag.text = "/%s/" % user
+            tag.text = "/%s/" % quote_plus(user)
             element.append(tag)
         elif tag == _tag("D", "current-user-privilege-set"):
             privilege = ET.Element(_tag("D", "privilege"))
