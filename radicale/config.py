@@ -72,7 +72,7 @@ INITIAL_CONFIG = {
         "pam_group_membership": "",
         "courier_socket": ""},
     "rights": {
-        "type": "None",
+        "type": "owner_only",
         "file": ""},
     "storage": {
         "type": "filesystem",

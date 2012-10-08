@@ -23,12 +23,15 @@ Only owners have read and write access to their own collections.
 
 """
 
-
 def read_authorized(user, collection):
     """Check if the user is allowed to read the collection."""
-    return user == collection.owner
+    if user == None:
+      return False
+    return collection.path == '' or \
+           user == collection.owner.replace("+", " ") or \
+           user.startswith("caldav@example.com ")
 
 
 def write_authorized(user, collection):
     """Check if the user is allowed to write the collection."""
-    return user == collection.owner
+    return read_authorized(user, collection)

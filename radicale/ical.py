@@ -181,7 +181,7 @@ class Collection(object):
         if principal and split_path and self.is_node(self.path):
             # Already existing principal collection
             self.owner = split_path[0]
-        elif len(split_path) > 1:
+        elif len(split_path) > 0:
             # URL with at least one folder
             self.owner = split_path[0]
         else:
