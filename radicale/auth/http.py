@@ -36,13 +36,7 @@ def is_authenticated(user, password):
   if user == None or password == None:
     return False
 
-  try:
-    email, calendar_id = user.split(" ")
-  except ValueError:
-    # there is no " " in the user
-    return False
-
-  payload = {USER_PARAM: email, PASSWORD_PARAM: password, 'calendar_id': calendar_id}
+  payload = {USER_PARAM: user, PASSWORD_PARAM: password, "caldav": True}
   r = requests.post(AUTH_URL, data=payload)
 
   return r.status_code in [200, 201]
