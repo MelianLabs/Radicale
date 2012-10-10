@@ -81,9 +81,9 @@ INITIAL_CONFIG = {
         "git_folder": os.path.expanduser(
             "~/.config/radicale/collections")},
     "logging": {
-        "config": "/etc/radicale/logging",
-        "debug": "False",
-        "full_environment": "False"}}
+        "config": "/var/www/Radicale/logging",
+        "debug": "True",
+        "full_environment": "True"}}
 
 # Create a ConfigParser and configure it
 _CONFIG_PARSER = ConfigParser()
