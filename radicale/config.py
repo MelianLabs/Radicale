@@ -52,7 +52,7 @@ INITIAL_CONFIG = {
     "auth": {
         #"type": "None",
         "type": "http",
-        "auth_url": "http://localhost:3000/api/users/sign_in",
+        "auth_url": "http://localhost/api/users/sign_in",
         #"user_param": "username",
         "user_param": "email",
         "password_param": "password",

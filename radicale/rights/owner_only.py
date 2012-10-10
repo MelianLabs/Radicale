@@ -29,7 +29,7 @@ def read_authorized(user, collection):
       return False
     return collection.path == '' or \
            user == collection.owner.replace("+", " ") or \
-           user.startswith("caldav@example.com ")
+           user == "caldav@example.com"
 
 
 def write_authorized(user, collection):
