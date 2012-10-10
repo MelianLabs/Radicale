@@ -22,6 +22,8 @@ Radicale WSGI file (mod_wsgi and uWSGI compliant).
 
 """
 
+import sys
+sys.path.append("/var/www/Radicale")
 import radicale
 
 
